@@ -6,14 +6,25 @@ package edu.wpi.first.wpilibj.templates;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public class RobotMap {
-    // For example to map the left and right motors, you could define the
-    // following variables to use with your drivetrain subsystem.
-    // public static final int leftMotor = 1;
-    // public static final int rightMotor = 2;
-    
-    // If you are using multiple modules, make sure to define both the port
-    // number and the module. For example you with a rangefinder:
-    // public static final int rangefinderPort = 1;
-    // public static final int rangefinderModule = 1;
+public class RobotMap
+{
+    public static class Joysticks
+	{
+		private Joysticks() {}
+		
+		/// Joystick port. TODO: Remove this and add gamepad
+		public static final int joystick = 1;
+	}
+	
+	public static class DriveMotors
+	{
+		private DriveMotors() {}
+		
+		/// Slot that motors are on
+		public static final int slot = 4;
+		/// Left motor channel
+		public static final int left = 1;
+		/// Right motor channel
+		public static final int right = 2;
+	}
 }

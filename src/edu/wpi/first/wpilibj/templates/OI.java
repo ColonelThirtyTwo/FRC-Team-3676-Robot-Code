@@ -1,7 +1,8 @@
 
 package edu.wpi.first.wpilibj.templates;
 
-public class OI {
+public class OI
+{
     // Process operator interface input here.
 }
 
