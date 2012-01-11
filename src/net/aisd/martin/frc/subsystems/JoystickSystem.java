@@ -6,25 +6,38 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
- *
+ * Subsystem for a Joystick.
  * @author Col32
  */
-public class JoystickSystem extends Subsystem
+public final class JoystickSystem extends Subsystem
 {
-	public static JoystickSystem self = new JoystickSystem(RobotMap.Joysticks.joystick);
 	
+	/**
+	 * The joystick that this system uses.
+	 * Don't access it unless the command owns the subsystem.
+	 */
 	public Joystick joystick;
 	
-	private JoystickSystem(int port)
+	/**
+	 * Creates a JoystickSystem with a specified joystick.
+	 */
+	public JoystickSystem(Joystick stick)
 	{
-		super("JoystickSystem");
-		if(self != null) throw new RuntimeException("Instanciated multiple JoystickSystem's");
-		joystick = new Joystick(port);
+		super(JoystickSystem.class.getName());
+		joystick = stick;
+	}
+	
+	/**
+	 * Creates a JoystickSystem with a new joystick specified by RobotMap.Joysticks.joystick
+	 */
+	public JoystickSystem()
+	{
+		this(new Joystick(RobotMap.Joysticks.joystick));
 	}
 
+	/// No default command
 	protected void initDefaultCommand()
 	{
-		// None
 	}
 	
 }

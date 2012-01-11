@@ -3,32 +3,50 @@ package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
-import net.aisd.martin.frc.commands.JoyDriveCommand;
+import net.aisd.martin.frc.commands.ArcadeDriveCommand;
 
 /**
- *
+ * Subsystem for robot drive motors. Default command is an ArcadeDriveCommand.
+ * @see ArcadeDriveCommand
  * @author Col32
  */
-public class DriveSystem extends Subsystem
+public final class DriveSystem extends Subsystem
 {
-	public static DriveSystem self = new DriveSystem();
+	
+	/**
+	 * The RobotDrive that this subsystem controls.
+	 * Don't access it unless the command owns the subsystem.
+	 */
 	public RobotDrive driver;
 	
-	private DriveSystem()
+	/**
+	 * Creates a DriveSystem which holds a RobotDrive instance.
+	 * @param drive The RobotDrive instance to control.
+	 */
+	public DriveSystem(RobotDrive drive)
 	{
-		super("DriveSystem");
-		if(self != null) throw new RuntimeException("Instanciated multiple DriveSystem's");
-		SpeedController left = new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left);
-		SpeedController right = new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right);
-		driver = new RobotDrive(left,right);
+		super(DriveSystem.class.getName());
+		driver = drive;
+	}
+	
+	/**
+	 * Creates a DriveSystem which holds a RobotDrive instance.
+	 * This constructor initializes a new RobotDrive using two new Jaguars defined
+	 * by RobotMap.DriveMotors.slot/left/right.
+	 */
+	public DriveSystem()
+	{
+		this(new RobotDrive(
+				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left),
+				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
+			));
 	}
 	
 	protected void initDefaultCommand()
 	{
-		setDefaultCommand(new JoyDriveCommand());
+		setDefaultCommand(new ArcadeDriveCommand());
 	}
 	
 }
