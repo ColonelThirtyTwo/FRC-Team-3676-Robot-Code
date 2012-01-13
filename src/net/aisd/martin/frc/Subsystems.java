@@ -12,14 +12,23 @@ import net.aisd.martin.frc.subsystems.*;
 public final class Subsystems
 {
 	private Subsystems() {}
-	
+
 	/**
 	 * DriveSystem subsystem.
 	 */
-	public static final DriveSystem drivesystem = new DriveSystem();
-	
+	public static DriveSystem drivesystem;
+
 	/**
 	 * JoystickSystem subsystem.
 	 */
-	public static final JoystickSystem joysticksystem = new JoystickSystem();
+	public static JoystickSystem joysticksystem;
+
+	/**
+	 * This function initializes all of the subsystems.
+	 */
+	public static void init()
+	{
+		drivesystem = new DriveSystem();
+		joysticksystem = new JoystickSystem();
+	}
 }
