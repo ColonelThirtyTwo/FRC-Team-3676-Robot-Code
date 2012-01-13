@@ -11,13 +11,13 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 public final class JoystickSystem extends Subsystem
 {
-	
+
 	/**
 	 * The joystick that this system uses.
 	 * Don't access it unless the command owns the subsystem.
 	 */
 	public Joystick joystick;
-	
+
 	/**
 	 * Creates a JoystickSystem with a specified joystick.
 	 */
@@ -26,18 +26,18 @@ public final class JoystickSystem extends Subsystem
 		super(JoystickSystem.class.getName());
 		joystick = stick;
 	}
-	
+
 	/**
 	 * Creates a JoystickSystem with a new joystick specified by RobotMap.Joysticks.joystick
 	 */
 	public JoystickSystem()
 	{
-		this(new Joystick(RobotMap.Joysticks.joystick));
+		this(new Joystick(RobotMap.Input.joystick));
 	}
 
 	/// No default command
 	protected void initDefaultCommand()
 	{
 	}
-	
+
 }
