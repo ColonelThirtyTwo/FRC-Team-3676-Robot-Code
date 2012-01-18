@@ -8,6 +8,14 @@ package edu.wpi.first.wpilibj.templates;
  */
 public final class RobotMap
 {
+	
+	/**
+	 * Signals a value that needs to be changed. Used for code for a device that
+	 * hasn't been built yet and the slot/channel for it is unknown. To find usages
+	 * of this in netbeans, right click on the variable and select "Find Usage"
+	 */
+	public static final int INVALID = Integer.MIN_VALUE;
+	
 	/**
 	 * Contains input device mappings (ex joysticks and gamepads)
 	 */
@@ -32,5 +40,25 @@ public final class RobotMap
 		public static final int left = 1;
 		/// Right motor channel
 		public static final int right = 2;
+	}
+	
+	/**
+	 * Contains shooter motor mappings.
+	 */
+	public static final class Shooter
+	{
+		private Shooter() {}
+		
+		/// Slot that pneumatics are on
+		public static final int pneumatics_slot = 1;
+		/// Slot that motors are on
+		public static final int motor_slot = 1;
+		
+		/// Motor 1 channel
+		public static final int motor1 = INVALID;
+		/// Motor 2 channel
+		public static final int motor2 = INVALID;
+		/// Piston channel
+		public static final int piston = INVALID;
 	}
 }
