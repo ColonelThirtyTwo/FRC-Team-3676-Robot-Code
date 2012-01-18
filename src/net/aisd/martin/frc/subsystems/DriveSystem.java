@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
-import net.aisd.martin.frc.commands.ArcadeDriveCommand;
+import net.aisd.martin.frc.commands.TankDriveCommand;
 
 /**
  * Subsystem for robot drive motors. Default command is an ArcadeDriveCommand.
@@ -46,7 +46,7 @@ public final class DriveSystem extends Subsystem
 	
 	protected void initDefaultCommand()
 	{
-		setDefaultCommand(new ArcadeDriveCommand());
+		setDefaultCommand(new TankDriveCommand());
 	}
 	
 }
