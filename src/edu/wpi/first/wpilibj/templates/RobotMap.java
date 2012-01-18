@@ -23,7 +23,7 @@ public final class RobotMap
 	{
 		private Input() {}
 
-		/// Joystick port. TODO: Remove this and add gamepad
+		/// Joystick port
 		public static final int joystick = 1;
 	}
 

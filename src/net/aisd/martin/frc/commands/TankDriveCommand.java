@@ -11,11 +11,11 @@ import net.aisd.martin.frc.subsystems.JoystickSystem;
  * Is interruptible.
  * @author Col32
  */
-public class ArcadeDriveCommand extends CommandBase
+public class TankDriveCommand extends CommandBase
 {
-	public ArcadeDriveCommand()
+	public TankDriveCommand()
 	{
-		super(ArcadeDriveCommand.class.getName()); // Corrects name when refactoring
+		super(TankDriveCommand.class.getName()); // Corrects name when refactoring
 		setInterruptible(true);
 		requires(Subsystems.drivesystem);
 		requires(Subsystems.joysticksystem);
@@ -27,7 +27,8 @@ public class ArcadeDriveCommand extends CommandBase
 
 	protected void execute()
 	{
-		Subsystems.drivesystem.driver.arcadeDrive(Subsystems.joysticksystem.joystick);
+		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 0,
+				Subsystems.joysticksystem.joystick, 1);
 	}
 
 	protected boolean isFinished()
