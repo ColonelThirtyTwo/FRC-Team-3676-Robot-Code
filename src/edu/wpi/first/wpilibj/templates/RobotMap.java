@@ -27,7 +27,7 @@ public final class RobotMap
 		private DriveMotors() {}
 
 		/// Slot that motors are on
-		public static final int slot = 2;
+		public static final int slot = 1;
 		/// Left motor channel
 		public static final int left = 1;
 		/// Right motor channel
