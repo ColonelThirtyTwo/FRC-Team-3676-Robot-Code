@@ -55,9 +55,9 @@ public final class RobotMap
 		public static final int motor_slot = 1;
 		
 		/// Motor 1 channel
-		public static final int motor1 = INVALID;
+		public static final int motor1 = 3;
 		/// Motor 2 channel
-		public static final int motor2 = INVALID;
+		public static final int motor2 = 4;
 		/// Piston channel
 		public static final int piston = INVALID;
 	}
