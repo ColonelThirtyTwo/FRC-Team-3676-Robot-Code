@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import net.aisd.martin.frc.commands.HIDShooterCommand;
 
 /**
  * Controls the shooter.
@@ -13,9 +14,11 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 public class ShooterSystem extends Subsystem
 {
+	/// Time delay, in milliseconds, between calling shoot() and
+	// setting the piston to retract
 	private static final long RetractTimer = 2*1000;
 	
-	private boolean isSpinning = false;
+	private double spinPower = 0;
 	private long retractTimer = 0;
 
 	private Solenoid piston;
@@ -48,12 +51,11 @@ public class ShooterSystem extends Subsystem
 	}
 	
 	/**
-	 * Tells the motors to spin up or down.
-	 * @param spin True to spin up, false to stop powering
+	 * Sets the motor power. 
 	 */
-	public void setSpinning(boolean spin)
+	public void setSpinning(double power)
 	{
-		isSpinning = spin;
+		spinPower = power;
 	}
 	
 	/**
@@ -62,7 +64,8 @@ public class ShooterSystem extends Subsystem
 	 */
 	public boolean shoot()
 	{
-		if(!isSpinning) return false;
+		// TODO: Cooldown timer so that piston has a chance to retract and reload
+		if(spinPower == 0) return false;
 		long time = System.currentTimeMillis();
 		if(time < retractTimer) return false;
 		retractTimer = time+RetractTimer;
@@ -79,20 +82,13 @@ public class ShooterSystem extends Subsystem
 		else
 			piston.set(false);
 		
-		if(isSpinning)
-		{
-			motor1.set(1);
-			motor2.set(1);
-		}
-		else
-		{
-			motor1.set(0);
-			motor2.set(0);
-		}
+		motor1.set(spinPower);
+		motor2.set(spinPower);
 	}
 	
 	protected void initDefaultCommand()
 	{
+		setDefaultCommand(new HIDShooterCommand());
 	}
 	
 }

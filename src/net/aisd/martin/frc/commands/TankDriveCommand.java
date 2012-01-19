@@ -1,10 +1,9 @@
 
 package net.aisd.martin.frc.commands;
 
-import net.aisd.martin.frc.subsystems.DriveSystem;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import net.aisd.martin.frc.Subsystems;
-import net.aisd.martin.frc.subsystems.JoystickSystem;
 
 /**
  * Command to control the DriveSystem using the JoystickSystem. Arcade-style controls.
@@ -27,8 +26,8 @@ public class TankDriveCommand extends CommandBase
 
 	protected void execute()
 	{
-		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 0,
-				Subsystems.joysticksystem.joystick, 1);
+		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 1,
+				Subsystems.joysticksystem.joystick, 5);
 	}
 
 	protected boolean isFinished()

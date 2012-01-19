@@ -23,6 +23,8 @@ public final class Subsystems
 	 */
 	public static JoystickSystem joysticksystem;
 
+	
+	public static ShooterSystem shootersystem;
 	/**
 	 * This function initializes all of the subsystems.
 	 */
@@ -30,5 +32,6 @@ public final class Subsystems
 	{
 		drivesystem = new DriveSystem();
 		joysticksystem = new JoystickSystem();
+		shootersystem = new ShooterSystem();
 	}
 }
