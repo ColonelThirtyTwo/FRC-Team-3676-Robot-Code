@@ -22,9 +22,12 @@ public final class Subsystems
 	 * JoystickSystem subsystem.
 	 */
 	public static JoystickSystem joysticksystem;
-
 	
+	/**
+	 * ShooterSystem subsystem.
+	 */
 	public static ShooterSystem shootersystem;
+	
 	/**
 	 * This function initializes all of the subsystems.
 	 */

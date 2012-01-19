@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import net.aisd.martin.frc.Subsystems;
 
 /**
- * Command to control the DriveSystem using the JoystickSystem. Arcade-style controls.
+ * Command to control the DriveSystem using the JoystickSystem. Tank-style controls.
  * Is interruptible.
  * @author Col32
  */
