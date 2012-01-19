@@ -26,7 +26,7 @@ public class TankDriveCommand extends CommandBase
 
 	protected void execute()
 	{
-		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 1,
+		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 2,
 				Subsystems.joysticksystem.joystick, 5);
 	}
 
