@@ -59,6 +59,6 @@ public final class RobotMap
 		/// Motor 2 channel
 		public static final int motor2 = 4;
 		/// Piston channel
-		public static final int piston = INVALID;
+		public static final int piston = 1;
 	}
 }
