@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
 import net.aisd.martin.frc.commands.TankDriveCommand;
 
 /**
- * Subsystem for robot drive motors. Default command is an ArcadeDriveCommand.
- * @see ArcadeDriveCommand
+ * Subsystem for robot drive motors. Default command is an TankDriveCommand.
+ * @see TankDriveCommand
  * @author Col32
  */
 public final class DriveSystem extends Subsystem

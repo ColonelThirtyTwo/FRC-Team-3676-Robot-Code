@@ -22,13 +22,20 @@ public final class Subsystems
 	 * JoystickSystem subsystem.
 	 */
 	public static JoystickSystem joysticksystem;
+        
+        /**
+         * ShooterSystem subsystem
+         */
+        public static ShooterSystem shootersystem;
 
 	/**
 	 * This function initializes all of the subsystems.
+         * Neil Manning: Added ShooterSystem initialization
 	 */
 	public static void init()
 	{
 		drivesystem = new DriveSystem();
 		joysticksystem = new JoystickSystem();
+                shootersystem = new ShooterSystem();
 	}
 }

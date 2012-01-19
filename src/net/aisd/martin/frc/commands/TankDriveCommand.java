@@ -7,7 +7,7 @@ import net.aisd.martin.frc.Subsystems;
 import net.aisd.martin.frc.subsystems.JoystickSystem;
 
 /**
- * Command to control the DriveSystem using the JoystickSystem. Arcade-style controls.
+ * Command to control the DriveSystem using the JoystickSystem. Tank-style controls.
  * Is interruptible.
  * @author Col32
  */
