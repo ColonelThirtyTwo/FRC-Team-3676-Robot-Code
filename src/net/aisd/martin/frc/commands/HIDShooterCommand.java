@@ -26,9 +26,21 @@ public class HIDShooterCommand extends CommandBase
 	protected void execute()
 	{
 		Joystick joy = Subsystems.joysticksystem.joystick;
-		double power = joy.getRawAxis(3);
-		if(power < 0.1) power = 0;
-		Subsystems.shootersystem.setSpinning(power*0.8);
+		//double power = joy.getRawAxis(3);
+		//if(power < 0.1) power = 0;
+		double power;
+		if(joy.getRawButton(1))
+			power = 0.25;
+		else if(joy.getRawButton(2))
+			power = 0.5;
+		else if(joy.getRawButton(3))
+			power = 0.75;
+		else if(joy.getRawButton(4))
+			power = 1;
+		else
+			power = 0;
+		
+		Subsystems.shootersystem.setSpinning(power);
 		Subsystems.shootersystem.think();
 	}
 
