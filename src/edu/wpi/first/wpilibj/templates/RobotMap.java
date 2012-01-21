@@ -36,10 +36,14 @@ public final class RobotMap
 
 		/// Slot that motors are on
 		public static final int slot = 1;
-		/// Left motor channel
-		public static final int left = 1;
-		/// Right motor channel
-		public static final int right = 2;
+		/// Back left motor channel
+		public static final int rear_left = 1;
+		/// Back right motor channel
+		public static final int rear_right = 2;
+                /// Front left moter channel
+                public static final int front_left = 3;
+                /// Front right motor channel
+                public static final int front_right = 3;
 	}
 	
 	/**
