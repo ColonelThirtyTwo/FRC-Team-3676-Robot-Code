@@ -39,9 +39,7 @@ public final class DriveSystem extends Subsystem
 	public DriveSystem()
 	{
 		this(new RobotDrive(
-				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.front_left),
 				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rear_left),
-                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.front_right),
                                 new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rear_right)
 			));
 	}
