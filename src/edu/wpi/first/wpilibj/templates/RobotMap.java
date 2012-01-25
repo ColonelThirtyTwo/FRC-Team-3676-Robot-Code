@@ -37,9 +37,9 @@ public final class RobotMap
 		/// Slot that motors are on
 		public static final int slot = 1;
 		/// left motor channel
-		public static final int rear_left = 1;
+		public static final int left = 1;
 		/// right motor channel
-		public static final int rear_right = 2;
+		public static final int right = 2;
         }
 	/**
 	 * Contains shooter motor mappings.

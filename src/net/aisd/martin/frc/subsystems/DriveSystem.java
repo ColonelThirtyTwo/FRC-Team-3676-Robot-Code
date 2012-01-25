@@ -34,13 +34,13 @@ public final class DriveSystem extends Subsystem
 	/**
 	 * Creates a DriveSystem which holds a RobotDrive instance.
 	 * This constructor initializes a new RobotDrive using four new Jaguars defined
-	 * by RobotMap.DriveMotors.slot front/rear/left/right.
+	 * by RobotMap.DriveMotors.slotleft/right.
 	 */
 	public DriveSystem()
 	{
 		this(new RobotDrive(
-				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rear_left),
-                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rear_right)
+				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left),
+                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
 			));
 	}
 	
