@@ -38,10 +38,16 @@ public final class DriveSystem extends Subsystem
 	 */
 	public DriveSystem()
 	{
-		this(new RobotDrive(
+		super(DriveSystem.class.getName());
+		RobotDrive d = new RobotDrive(
 				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left),
-                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
-			));
+				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
+			);
+		d.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kFrontRight, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kRearRight, false);
+		driver = d;
 	}
 	
 	protected void initDefaultCommand()
