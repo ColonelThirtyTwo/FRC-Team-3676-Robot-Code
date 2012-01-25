@@ -44,9 +44,9 @@ public final class DriveSystem extends Subsystem
 				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
 			);
 		d.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
-		d.setInvertedMotor(RobotDrive.MotorType.kFrontRight, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		d.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
-		d.setInvertedMotor(RobotDrive.MotorType.kRearRight, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 		driver = d;
 	}
 	
