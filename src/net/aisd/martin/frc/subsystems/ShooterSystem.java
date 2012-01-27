@@ -22,7 +22,7 @@ public class ShooterSystem extends Subsystem
 	private long retractTimer = 0;
 
 	private Solenoid piston;
-	private SpeedController motor1, motor2;
+	private SpeedController topmotor, bottommotor;
 
 	/**
 	 * Creates a new Shooter system with specified components.
@@ -30,12 +30,12 @@ public class ShooterSystem extends Subsystem
 	 * @param motor1 First roller motor
 	 * @param motor2 Second roller motor
 	 */
-	public ShooterSystem(Solenoid piston, SpeedController motor1, SpeedController motor2)
+	public ShooterSystem(Solenoid piston, SpeedController topmotor, SpeedController bottommotor)
 	{
 		super(ShooterSystem.class.getName());
 		this.piston = piston;
-		this.motor1 = motor1;
-		this.motor2 = motor2;
+		this.topmotor = topmotor;
+		this.bottommotor = bottommotor;
 	}
 
 	/**
@@ -45,8 +45,8 @@ public class ShooterSystem extends Subsystem
 	{
 		this(
 			new Solenoid(RobotMap.Shooter.pneumatics_slot, RobotMap.Shooter.piston),
-			new Jaguar(RobotMap.Shooter.motor_slot, RobotMap.Shooter.motor1),
-			new Jaguar(RobotMap.Shooter.motor_slot, RobotMap.Shooter.motor2)
+			new Jaguar(RobotMap.Shooter.motor_slot, RobotMap.Shooter.topmotor),
+			new Jaguar(RobotMap.Shooter.motor_slot, RobotMap.Shooter.bottommotor)
 		);
 	}
 	
@@ -82,8 +82,8 @@ public class ShooterSystem extends Subsystem
 		else
 			piston.set(false);
 		
-		motor1.set(spinPower);
-		motor2.set(spinPower);
+		topmotor.set(spinPower);
+		bottommotor.set(spinPower*0.8);
 	}
 	
 	protected void initDefaultCommand()
