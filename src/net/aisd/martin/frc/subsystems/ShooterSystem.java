@@ -82,8 +82,8 @@ public class ShooterSystem extends Subsystem
 		else
 			piston.set(false);
 		
-		topmotor.set(spinPower);
-		bottommotor.set(spinPower*0.8);
+		topmotor.set(spinPower*0.8);
+		bottommotor.set(spinPower);
 	}
 	
 	protected void initDefaultCommand()
