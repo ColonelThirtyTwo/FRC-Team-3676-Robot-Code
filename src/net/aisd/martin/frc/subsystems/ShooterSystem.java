@@ -64,7 +64,6 @@ public class ShooterSystem extends Subsystem
 	 */
 	public boolean shoot()
 	{
-		// TODO: Cooldown timer so that piston has a chance to retract and reload
 		if(spinPower == 0) return false;
 		long time = System.currentTimeMillis();
 		if(time < retractTimer) return false;
@@ -77,7 +76,7 @@ public class ShooterSystem extends Subsystem
 	 */
 	public void think()
 	{
-		if(System.currentTimeMillis() < retractTimer)
+		if((System.currentTimeMillis()+2000) < retractTimer)
 			piston.set(true);
 		else
 			piston.set(false);

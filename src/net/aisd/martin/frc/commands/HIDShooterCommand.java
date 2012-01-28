@@ -16,6 +16,7 @@ public class HIDShooterCommand extends CommandBase
 		super(HIDShooterCommand.class.getName());
 		setInterruptible(true);
 		requires(Subsystems.shootersystem);
+                requires(Subsystems.compressorsystem);
 	}
 	
 	protected void initialize()
@@ -39,6 +40,8 @@ public class HIDShooterCommand extends CommandBase
 			power = 1;
 		else
 			power = 0;
+                if(joy.getRawButton(5))
+                    Subsystems.shootersystem.shoot();
 		
 		Subsystems.shootersystem.setSpinning(power);
 		Subsystems.shootersystem.think();

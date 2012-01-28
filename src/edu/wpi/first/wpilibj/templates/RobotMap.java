@@ -59,5 +59,9 @@ public final class RobotMap
 		public static final int bottommotor = 4;
 		/// Piston channel
 		public static final int piston = 1;
+                /// Compressor channel
+                public static final int compressor = 2;
+                /// Pressure Switch channel
+                public static final int pressureSwitch = 3;
 	}
 }
