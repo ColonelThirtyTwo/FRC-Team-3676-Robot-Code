@@ -41,6 +41,20 @@ public final class RobotMap
 		/// right motor channel
 		public static final int right = 2;
         }
+        
+        /**
+         * Contains the Bridge Manipulator Arm motor
+         */
+        
+        public static final class ManipulatorMotor {
+            private ManipulatorMotor(){}
+            
+            //Manipulator Arm Slot
+            public static final int slot = 1;
+            //Manipulator Arm channel
+            public static final int channel = 1;
+        }
+        
 	/**
 	 * Contains shooter motor mappings.
 	 */
