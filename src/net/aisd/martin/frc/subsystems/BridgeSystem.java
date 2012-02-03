@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
-import net.aisd.martin.frc.commands.TankDriveCommand;
 
 /**
  *
@@ -28,7 +27,7 @@ public class BridgeSystem extends Subsystem {
     //creates new BridgeSystem
     public BridgeSystem(){
         this(
-                new Jaguar(RobotMap.ManipulatorSolenoid.slot, RobotMap.ManipulatorSolenoid.channel)
+                new Jaguar(RobotMap.ManipulatorMotor.slot, RobotMap.ManipulatorMotor.channel)
             );
     }
     

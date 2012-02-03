@@ -46,8 +46,8 @@ public final class RobotMap
          * Contains the Bridge Manipulator Arm motor
          */
         
-        public static final class ManipulatorSolenoid {
-            private ManipulatorSolenoid(){}
+        public static final class ManipulatorMotor {
+            private ManipulatorMotor(){}
             
             //Manipulator Arm Slot
             public static final int slot = 1;

@@ -29,7 +29,8 @@ public class TankDriveCommand extends CommandBase
 	{
 		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 2,
 				Subsystems.joysticksystem.joystick, 5);
-                
+                Subsystems.bridgesystem.setArmPower((Subsystems.joysticksystem.joystick.getAxis(Joystick.AxisType.kZ) * -1));
+                Subsystems.bridgesystem.think();
                 
 	}
 
