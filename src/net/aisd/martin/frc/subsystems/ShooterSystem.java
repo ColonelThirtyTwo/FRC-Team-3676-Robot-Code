@@ -76,7 +76,7 @@ public class ShooterSystem extends Subsystem
 	 */
 	public void think()
 	{
-		if((System.currentTimeMillis()+2000) < retractTimer)
+		if((System.currentTimeMillis()) < retractTimer)
 			piston.set(true);
 		else
 			piston.set(false);
