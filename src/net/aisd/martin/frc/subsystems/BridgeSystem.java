@@ -28,7 +28,7 @@ public class BridgeSystem extends Subsystem {
     //creates new BridgeSystem
     public BridgeSystem(){
         this(
-                new Jaguar(RobotMap.ManipulatorMotor.slot, RobotMap.ManipulatorMotor.channel)
+                new Jaguar(RobotMap.ManipulatorSolenoid.slot, RobotMap.ManipulatorSolenoid.channel)
             );
     }
     
