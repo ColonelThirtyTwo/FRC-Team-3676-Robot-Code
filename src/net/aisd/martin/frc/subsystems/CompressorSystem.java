@@ -19,6 +19,7 @@ public class CompressorSystem extends Subsystem
     {
         super(CompressorSystem.class.getName());
         compressor = comp;
+		compressor.start();
     }
     
     public CompressorSystem()
