@@ -79,10 +79,10 @@ public final class RobotMap
         public static final class Compressor
         {
                 /// Slot for commpressor and pressureSwitch
-                public static final int comppressorSwitch_slot = 1;
+                public static final int compressor_slot = 1;
                 /// Compressor channel
-                public static final int compressor = 6;
+                public static final int compressor = 1;
                 /// Pressure Switch channel
-                public static final int pressureSwitch = 7;
+                public static final int pressureSwitch = 1;
         }
 }

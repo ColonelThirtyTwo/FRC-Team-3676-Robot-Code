@@ -25,9 +25,9 @@ public class CompressorSystem extends Subsystem
     public CompressorSystem()
     {
         this(new Compressor(
-                RobotMap.Compressor.comppressorSwitch_slot, 
+                RobotMap.Compressor.compressor_slot, 
                 RobotMap.Compressor.pressureSwitch, 
-                RobotMap.Compressor.comppressorSwitch_slot, 
+                RobotMap.Compressor.compressor_slot, 
                 RobotMap.Compressor.compressor));
     }
     
