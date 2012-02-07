@@ -52,7 +52,7 @@ public final class RobotMap
             //Manipulator Arm Slot
             public static final int slot = 1;
             //Manipulator Arm channel
-            public static final int channel = 1;
+            public static final int channel = 6;
         }
         
 	/**
@@ -78,7 +78,7 @@ public final class RobotMap
         
         public static final class Compressor
         {
-                /// Slot for commpressor and pressureSwitch
+                /// Slot for compressor and pressureSwitch
                 public static final int compressor_slot = 1;
                 /// Compressor channel
                 public static final int compressor = 5;
