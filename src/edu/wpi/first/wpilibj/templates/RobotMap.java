@@ -71,8 +71,10 @@ public final class RobotMap
 		public static final int topmotor = 3;
 		/// Motor 2 channel
 		public static final int bottommotor = 4;
-		/// Piston channel
-		public static final int piston = 1;
+		/// Piston forward channel
+		public static final int piston_forward = 1;
+		/// Piston backward channel
+		public static final int piston_backward = 2;
                 
 	}
         
@@ -80,9 +82,9 @@ public final class RobotMap
         {
                 /// Slot for compressor and pressureSwitch
                 public static final int compressor_slot = 1;
-                /// Compressor channel
-                public static final int compressor = 5;
-                /// Pressure Switch channel
-                public static final int pressureSwitch = 1;
+                /// Compressor channel (Relay)
+                public static final int compressor = 1;
+                /// Pressure Switch channel (Digital IO)
+                public static final int pressure_switch = 1;
         }
 }

@@ -19,14 +19,13 @@ public class CompressorSystem extends Subsystem
     {
         super(CompressorSystem.class.getName());
         compressor = comp;
-		compressor.start();
     }
     
     public CompressorSystem()
     {
         this(new Compressor(
                 RobotMap.Compressor.compressor_slot, 
-                RobotMap.Compressor.pressureSwitch, 
+                RobotMap.Compressor.pressure_switch, 
                 RobotMap.Compressor.compressor_slot, 
                 RobotMap.Compressor.compressor));
     }

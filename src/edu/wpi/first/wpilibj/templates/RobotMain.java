@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
+import net.aisd.martin.frc.Subsystems;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -40,6 +41,9 @@ public class RobotMain extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
         autonomousCommand.start();
+		
+		// Start compressor
+		Subsystems.compressorsystem.compressor.start();
     }
 
     /**
@@ -55,6 +59,9 @@ public class RobotMain extends IterativeRobot {
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
 		autonomousCommand.cancel();
+		
+		// Start compressor
+		Subsystems.compressorsystem.compressor.start();
     }
 
     /**

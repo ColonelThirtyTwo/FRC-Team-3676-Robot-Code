@@ -1,6 +1,7 @@
 
 package net.aisd.martin.frc.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -21,7 +22,7 @@ public class ShooterSystem extends Subsystem
 	private double spinPower = 0;
 	private long retractTimer = 0;
 
-	private Solenoid piston;
+	private DoubleSolenoid piston;
 	private SpeedController topmotor, bottommotor;
 
 	/**
@@ -30,7 +31,7 @@ public class ShooterSystem extends Subsystem
 	 * @param motor1 First roller motor
 	 * @param motor2 Second roller motor
 	 */
-	public ShooterSystem(Solenoid piston, SpeedController topmotor, SpeedController bottommotor)
+	public ShooterSystem(DoubleSolenoid piston, SpeedController topmotor, SpeedController bottommotor)
 	{
 		super(ShooterSystem.class.getName());
 		this.piston = piston;
@@ -44,7 +45,7 @@ public class ShooterSystem extends Subsystem
 	public ShooterSystem()
 	{
 		this(
-			new Solenoid(RobotMap.Shooter.pneumatics_slot, RobotMap.Shooter.piston),
+			new DoubleSolenoid(RobotMap.Shooter.pneumatics_slot, RobotMap.Shooter.piston_forward, RobotMap.Shooter.piston_backward),
 			new Jaguar(RobotMap.Shooter.motor_slot, RobotMap.Shooter.topmotor),
 			new Jaguar(RobotMap.Shooter.motor_slot, RobotMap.Shooter.bottommotor)
 		);
@@ -77,9 +78,9 @@ public class ShooterSystem extends Subsystem
 	public void think()
 	{
 		if((System.currentTimeMillis()) < retractTimer)
-			piston.set(true);
+			piston.set(DoubleSolenoid.Value.kForward);
 		else
-			piston.set(false);
+			piston.set(DoubleSolenoid.Value.kReverse);
 		
 		topmotor.set(spinPower*0.8);
 		bottommotor.set(spinPower);
