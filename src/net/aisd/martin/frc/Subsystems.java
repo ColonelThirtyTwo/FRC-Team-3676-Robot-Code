@@ -28,15 +28,15 @@ public final class Subsystems
 	 */
 	public static ShooterSystem shootersystem;
         
-        /**
-         * Compressor subsystem
-         */
-        public static CompressorSystem compressorsystem;
-        
-        /**
-         * Bridge Subsystem
-         */
-        public static BridgeSystem bridgesystem;
+	/**
+	 * Compressor subsystem.
+	 */
+	public static CompressorSystem compressorsystem;
+
+	/**
+	 * Bridge Subsystem.
+	 */
+	public static BridgeSystem bridgesystem;
 	
 	/**
 	 * This function initializes all of the subsystems.
@@ -46,7 +46,7 @@ public final class Subsystems
 		drivesystem = new DriveSystem();
 		joysticksystem = new JoystickSystem();
 		shootersystem = new ShooterSystem();
-                compressorsystem = new CompressorSystem();
-                bridgesystem = new BridgeSystem();
+		compressorsystem = new CompressorSystem();
+		bridgesystem = new BridgeSystem();
 	}
 }

@@ -11,10 +11,16 @@ import net.aisd.martin.frc.Subsystems;
 public class HIDBridgeManipulatorCommand extends CommandBase
 {
 
-	protected void initialize()
+	public HIDBridgeManipulatorCommand(String name)
 	{
+		super(HIDBridgeManipulatorCommand.class.getName());
 		this.setInterruptible(true);
 		this.requires(Subsystems.bridgesystem);
+	}
+	
+
+	protected void initialize()
+	{
 	}
 
 	protected void execute()

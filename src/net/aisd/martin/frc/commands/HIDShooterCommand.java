@@ -16,12 +16,11 @@ public class HIDShooterCommand extends CommandBase
 		super(HIDShooterCommand.class.getName());
 		setInterruptible(true);
 		requires(Subsystems.shootersystem);
-                requires(Subsystems.compressorsystem);
+		requires(Subsystems.compressorsystem);
 	}
 	
 	protected void initialize()
 	{
-		setInterruptible(true);
 	}
 
 	protected void execute()
