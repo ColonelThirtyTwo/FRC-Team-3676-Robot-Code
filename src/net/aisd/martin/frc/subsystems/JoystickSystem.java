@@ -6,7 +6,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
- * Subsystem for a Joystick.
+ * TODO: REMOVE THIS. Joysticks do not make good subsystems. Multiple commands
+ * require it. A better idea would be to make a subsystem for each button/axis.
  * @author Col32
  */
 public final class JoystickSystem extends Subsystem
