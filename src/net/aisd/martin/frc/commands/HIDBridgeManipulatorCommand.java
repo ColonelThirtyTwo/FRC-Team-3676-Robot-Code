@@ -26,7 +26,7 @@ public class HIDBridgeManipulatorCommand extends CommandBase
 	protected void execute()
 	{
 		// TODO: Increase power when we install limit switches
-		Subsystems.bridgesystem.setArmPower(Subsystems.joysticksystem.joystick.getRawButton(5) ? 0.4 : -0.4);
+		Subsystems.bridgesystem.setArmPower(Subsystems.joysticksystem.joystick.getRawButton(5) ? 0.25 : -0.25);
 		Subsystems.bridgesystem.think();
 	}
 
