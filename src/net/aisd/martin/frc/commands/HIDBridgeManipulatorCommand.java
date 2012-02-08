@@ -11,7 +11,7 @@ import net.aisd.martin.frc.Subsystems;
 public class HIDBridgeManipulatorCommand extends CommandBase
 {
 
-	public HIDBridgeManipulatorCommand(String name)
+	public HIDBridgeManipulatorCommand()
 	{
 		super(HIDBridgeManipulatorCommand.class.getName());
 		this.setInterruptible(true);
