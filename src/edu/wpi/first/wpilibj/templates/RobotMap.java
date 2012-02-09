@@ -8,7 +8,6 @@ package edu.wpi.first.wpilibj.templates;
  */
 public final class RobotMap
 {
-	
 	/**
 	 * Signals a value that needs to be changed. Used for code for a device that
 	 * hasn't been built yet and the slot/channel for it is unknown. To find usages
@@ -42,18 +41,19 @@ public final class RobotMap
 		public static final int right = 2;
         }
         
-        /**
-         * Contains the Bridge Manipulator Arm motor
-         */
-        
-        public static final class ManipulatorMotor {
-            private ManipulatorMotor(){}
-            
-            //Manipulator Arm Slot
-            public static final int slot = 1;
-            //Manipulator Arm channel
-            public static final int channel = 6;
-        }
+	/**
+		* Contains the Bridge Manipulator Arm motor
+		*/
+
+	public static final class ManipulatorMotor
+	{
+		private ManipulatorMotor(){}
+
+		//Manipulator Arm Slot
+		public static final int slot = 1;
+		//Manipulator Arm channel
+		public static final int channel = 6;
+	}
         
 	/**
 	 * Contains shooter motor mappings.
@@ -75,16 +75,15 @@ public final class RobotMap
 		public static final int piston_forward = 1;
 		/// Piston backward channel
 		public static final int piston_backward = 2;
-                
 	}
-        
-        public static final class Compressor
-        {
-                /// Slot for compressor and pressureSwitch
-                public static final int compressor_slot = 1;
-                /// Compressor channel (Relay)
-                public static final int compressor = 1;
-                /// Pressure Switch channel (Digital IO)
-                public static final int pressure_switch = 1;
-        }
+	
+	public static final class Compressor
+	{
+		/// Slot for compressor and pressureSwitch
+		public static final int compressor_slot = 1;
+		/// Compressor channel (Relay)
+		public static final int compressor = 1;
+		/// Pressure Switch channel (Digital IO)
+		public static final int pressure_switch = 1;
+	}
 }

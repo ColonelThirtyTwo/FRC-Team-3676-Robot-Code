@@ -3,7 +3,6 @@ package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Jaguar;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
@@ -20,7 +19,7 @@ public class ShooterSystem extends Subsystem
 	private static final long RetractTimer = 2*1000;
 	
 	private double spinPower = 0;
-	private long retractTimer = 0;
+	private long retractTimer = Long.MIN_VALUE;
 
 	private DoubleSolenoid piston;
 	private SpeedController topmotor, bottommotor;
@@ -69,6 +68,7 @@ public class ShooterSystem extends Subsystem
 		long time = System.currentTimeMillis();
 		if(time < retractTimer) return false;
 		retractTimer = time+RetractTimer;
+		System.out.println("Shooting");
 		return true;
 	}
 	
@@ -77,7 +77,7 @@ public class ShooterSystem extends Subsystem
 	 */
 	public void think()
 	{
-		if((System.currentTimeMillis()) < retractTimer)
+		if(System.currentTimeMillis() < retractTimer)
 			piston.set(DoubleSolenoid.Value.kForward);
 		else
 			piston.set(DoubleSolenoid.Value.kReverse);
