@@ -22,7 +22,8 @@ import net.aisd.martin.frc.Subsystems;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class RobotMain extends IterativeRobot {
+public class RobotMain extends IterativeRobot
+{
 
     Command autonomousCommand;
 
@@ -30,44 +31,45 @@ public class RobotMain extends IterativeRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
-    public void robotInit() {
+    public void robotInit()
+	{
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
 
         // Initialize all subsystems
         CommandBase.init();
+		// Init compressor
+		Subsystems.compressorsystem.compressor.start();
     }
 
-    public void autonomousInit() {
+    public void autonomousInit()
+	{
         // schedule the autonomous command (example)
         autonomousCommand.start();
-		
-		// Start compressor
-		Subsystems.compressorsystem.compressor.start();
     }
 
     /**
      * This function is called periodically during autonomous
      */
-    public void autonomousPeriodic() {
+    public void autonomousPeriodic()
+	{
         Scheduler.getInstance().run();
     }
 
-    public void teleopInit() {
+    public void teleopInit()
+	{
 		// This makes sure that the autonomous stops running when
 		// teleop starts running. If you want the autonomous to 
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
 		autonomousCommand.cancel();
-		
-		// Start compressor
-		Subsystems.compressorsystem.compressor.start();
     }
 
     /**
      * This function is called periodically during operator control
      */
-    public void teleopPeriodic() {
+    public void teleopPeriodic()
+	{
         Scheduler.getInstance().run();
     }
 }
