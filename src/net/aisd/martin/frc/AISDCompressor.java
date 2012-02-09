@@ -15,6 +15,7 @@ public class AISDCompressor
 	{
 		public void run()
 		{
+			System.out.println("Compressor> Starting Thread...");
 			while(true)
 			{
 				if(!pressureSwitch.get())
@@ -30,6 +31,7 @@ public class AISDCompressor
 				}
 				catch(InterruptedException e)
 				{
+					System.out.println("Compressor> Stopping Thread...");
 					compressorRelay.set(Relay.Value.kOff);
 					return;
 				}
