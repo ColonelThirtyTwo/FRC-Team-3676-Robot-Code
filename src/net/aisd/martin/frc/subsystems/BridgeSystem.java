@@ -1,9 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package net.aisd.martin.frc.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -11,25 +9,28 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
 import net.aisd.martin.frc.commands.HIDBridgeManipulatorCommand;
 
 /**
- *
- * @author Manning
+ * Bridge Manipulator Subsystem.
+ * @author Niel Manning
  */
 public class BridgeSystem extends Subsystem {
     
     private double power = 0;
     
     private SpeedController manipulatorArm;
+	private DigitalInput limitSwitch;
     
-    //creates new BridgeSystem with specified parts
-    public BridgeSystem(SpeedController manipulatorArm)
+
+    public BridgeSystem(SpeedController manipulatorArm, DigitalInput limitSwitch)
 	{
 		super(BridgeSystem.class.getName());
 		this.manipulatorArm = manipulatorArm;
+		this.limitSwitch = limitSwitch;
     }    
     //creates new BridgeSystem
     public BridgeSystem(){
         this(
-			new Jaguar(RobotMap.ManipulatorMotor.slot, RobotMap.ManipulatorMotor.channel)
+			new Jaguar(RobotMap.Manipulator.motorSlot, RobotMap.Manipulator.motorChannel),
+			new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitChannel)
 		);
     }
     
@@ -39,8 +40,16 @@ public class BridgeSystem extends Subsystem {
     
     public void think()
 	{
-		manipulatorArm.set(power);
+		if(limitSwitch == null || !limitSwitch.get())
+			manipulatorArm.set(power);
+		else
+			manipulatorArm.set(0);
     }
+	
+	public boolean getLimitSwitch()
+	{
+		return limitSwitch == null ? true : limitSwitch.get();
+	}
     
     protected void initDefaultCommand()
 	{

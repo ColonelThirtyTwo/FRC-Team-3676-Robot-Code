@@ -42,17 +42,21 @@ public final class RobotMap
         }
         
 	/**
-		* Contains the Bridge Manipulator Arm motor
-		*/
-
-	public static final class ManipulatorMotor
+	 * Contains the Bridge Manipulator mappings.
+	 */
+	public static final class Manipulator
 	{
-		private ManipulatorMotor(){}
+		private Manipulator(){}
 
-		//Manipulator Arm Slot
-		public static final int slot = 1;
-		//Manipulator Arm channel
-		public static final int channel = 6;
+		/// Manipulator Arm Slot
+		public static final int motorSlot = 1;
+		/// Manipulator Arm channel
+		public static final int motorChannel = 6;
+		
+		/// Limit Switch Slot
+		public static final int limitSlot = 1;
+		/// Limit Switch Channel (Digital IO)
+		public static final int limitChannel = 2;
 	}
         
 	/**
