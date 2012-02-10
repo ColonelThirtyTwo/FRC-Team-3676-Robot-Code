@@ -43,7 +43,7 @@ public class BridgeSystem extends Subsystem {
 		if(limitSwitch == null || !limitSwitch.get())
 			manipulatorArm.set(power);
 		else
-			manipulatorArm.set(0);
+			manipulatorArm.set(Math.max(power,0));
     }
 	
 	public boolean getLimitSwitch()
