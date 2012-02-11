@@ -16,7 +16,7 @@ public class TankDriveCommand extends CommandBase
 		super(TankDriveCommand.class.getName()); // Corrects name when refactoring
 		setInterruptible(true);
 		requires(Subsystems.drivesystem);
-		requires(Subsystems.joysticksystem);
+		requires(Subsystems.joystick1system);
 	}
 	
 	protected void initialize()
@@ -26,7 +26,7 @@ public class TankDriveCommand extends CommandBase
 
 	protected void execute()
 	{
-		Subsystems.drivesystem.driver.tankDrive(Subsystems.joysticksystem.joystick, 2, Subsystems.joysticksystem.joystick, 5);
+		Subsystems.drivesystem.driver.tankDrive(Subsystems.joystick1system.joystick, 2, Subsystems.joystick1system.joystick, 5);
 	}
 
 	protected boolean isFinished()

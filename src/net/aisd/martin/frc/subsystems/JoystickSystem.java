@@ -33,7 +33,7 @@ public final class JoystickSystem extends Subsystem
 	 */
 	public JoystickSystem()
 	{
-		this(new Joystick(RobotMap.Input.joystick));
+		this(new Joystick(RobotMap.Input.joystick1));
 	}
 
 	/// No default command

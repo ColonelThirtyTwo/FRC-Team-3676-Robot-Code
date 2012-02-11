@@ -22,8 +22,10 @@ public final class RobotMap
 	{
 		private Input() {}
 
-		/// Joystick port
-		public static final int joystick = 1;
+		/// First joystick port
+		public static final int joystick1 = 1;
+		/// Second joystick port
+		public static final int joystick2 = 1;
 	}
 
 	/**

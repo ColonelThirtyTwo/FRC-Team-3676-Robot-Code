@@ -1,6 +1,8 @@
 
 package net.aisd.martin.frc;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.templates.RobotMap;
 import net.aisd.martin.frc.subsystems.*;
 
 /**
@@ -19,9 +21,14 @@ public final class Subsystems
 	public static DriveSystem drivesystem;
 
 	/**
-	 * JoystickSystem subsystem.
+	 * First JoystickSystem subsystem.
 	 */
-	public static JoystickSystem joysticksystem;
+	public static JoystickSystem joystick1system;
+	
+	/**
+	 * Second JoystickSystem subsystem. 
+	 */
+	public static JoystickSystem joystick2system;
 	
 	/**
 	 * ShooterSystem subsystem.
@@ -44,7 +51,8 @@ public final class Subsystems
 	public static void init()
 	{
 		drivesystem = new DriveSystem();
-		joysticksystem = new JoystickSystem();
+		joystick1system = new JoystickSystem(new Joystick(RobotMap.Input.joystick1));
+		joystick2system = new JoystickSystem(new Joystick(RobotMap.Input.joystick2));
 		shootersystem = new ShooterSystem();
 		compressorsystem = new CompressorSystem();
 		bridgesystem = new BridgeSystem();
