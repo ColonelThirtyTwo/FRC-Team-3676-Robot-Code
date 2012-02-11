@@ -21,6 +21,7 @@ public class HIDShooterCommand extends CommandBase
 	
 	protected void initialize()
 	{
+		System.out.println(HIDShooterCommand.class.getName() + " started.");
 	}
 
 	protected void execute()

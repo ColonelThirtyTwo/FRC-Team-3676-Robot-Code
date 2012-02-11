@@ -2,7 +2,6 @@
 package net.aisd.martin.frc.commands;
 
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import net.aisd.martin.frc.Subsystems;
 
@@ -14,7 +13,7 @@ import net.aisd.martin.frc.Subsystems;
 public class CompressorSendStatusCommand extends CommandBase
 {
 	private static final int dashboardDigitalOut = 1;
-	private static final String Key = "PressureStatus";
+	//private static final String Key = "PressureStatus";
 	
 	public CompressorSendStatusCommand()
 	{
@@ -26,12 +25,13 @@ public class CompressorSendStatusCommand extends CommandBase
 
 	protected void initialize()
 	{
+		System.out.println(CompressorSendStatusCommand.class.getName() + " started.");
 	}
 
 	protected void execute()
 	{
 		boolean pressure = Subsystems.compressorsystem.compressor.getPressureSwitch();
-		SmartDashboard.putBoolean(Key, pressure);
+		//SmartDashboard.putBoolean(Key, pressure);
 		DriverStation.getInstance().setDigitalOut(dashboardDigitalOut, pressure);
 	}
 

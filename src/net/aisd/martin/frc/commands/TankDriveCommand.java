@@ -1,7 +1,6 @@
 
 package net.aisd.martin.frc.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import net.aisd.martin.frc.Subsystems;
 
@@ -22,6 +21,7 @@ public class TankDriveCommand extends CommandBase
 	
 	protected void initialize()
 	{
+		System.out.println(TankDriveCommand.class.getName() + " started.");
 	}
 
 	protected void execute()

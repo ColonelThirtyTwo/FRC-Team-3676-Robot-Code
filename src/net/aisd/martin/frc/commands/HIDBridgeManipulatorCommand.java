@@ -21,6 +21,7 @@ public class HIDBridgeManipulatorCommand extends CommandBase
 
 	protected void initialize()
 	{
+		System.out.println(HIDBridgeManipulatorCommand.class.getName() + " started.");
 	}
 
 	protected void execute()
