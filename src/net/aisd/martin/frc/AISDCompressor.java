@@ -31,11 +31,11 @@ public class AISDCompressor
 				}
 				catch(InterruptedException e)
 				{
-					System.out.println("Compressor> Stopping Thread...");
-					compressorRelay.set(Relay.Value.kOff);
-					return;
+					break;
 				}
 			}
+			compressorRelay.set(Relay.Value.kOff);
+			System.out.println("Compressor> Stopping Thread...");
 		}
 	}
 	
@@ -116,5 +116,13 @@ public class AISDCompressor
 	public boolean enabled()
 	{
 		return thread.isAlive();
+	}
+	
+	/**
+	 * Returns pressure switch value.
+	 */
+	public boolean getPressureSwitch()
+	{
+		return pressureSwitch.get();
 	}
 }

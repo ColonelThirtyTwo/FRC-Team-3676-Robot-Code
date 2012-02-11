@@ -1,9 +1,9 @@
 package net.aisd.martin.frc.subsystems;
 
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import net.aisd.martin.frc.AISDCompressor;
+import net.aisd.martin.frc.commands.CompressorSendStatusCommand;
 
 /**
  * Subsystem for the compressor system that turns
@@ -34,7 +34,7 @@ public class CompressorSystem extends Subsystem
 
     protected void initDefaultCommand() 
     {
-        //No Default Command
+        this.setDefaultCommand(new CompressorSendStatusCommand());
     }
     
     
