@@ -3,8 +3,10 @@ package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import net.aisd.martin.frc.commands.ArcadeDriveCommand;
 import net.aisd.martin.frc.commands.TankDriveCommand;
 
 /**
@@ -14,6 +16,19 @@ import net.aisd.martin.frc.commands.TankDriveCommand;
  */
 public final class DriveSystem extends Subsystem
 {
+	/**
+	 * Workaround to set up a drivesystem while still calling this constructor,
+	 * since we cannot call methods in constructor until its too late.
+	 */
+	private static RobotDrive setupDriveSystem(SpeedController sp1, SpeedController sp2)
+	{
+		RobotDrive d = new RobotDrive(sp1, sp2);
+		d.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+		d.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
+		d.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+		return d;
+	}
 	
 	/**
 	 * The RobotDrive that this subsystem controls.
@@ -38,21 +53,15 @@ public final class DriveSystem extends Subsystem
 	 */
 	public DriveSystem()
 	{
-		super(DriveSystem.class.getName());
-		RobotDrive d = new RobotDrive(
+		this(setupDriveSystem(
 				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left),
 				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
-			);
-		d.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
-		d.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
-		d.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
-		d.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-		driver = d;
+		));
 	}
 	
 	protected void initDefaultCommand()
 	{
-		setDefaultCommand(new TankDriveCommand());
+		setDefaultCommand(new ArcadeDriveCommand());
 	}
 	
 }
