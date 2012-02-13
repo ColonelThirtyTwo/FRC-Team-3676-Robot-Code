@@ -25,7 +25,7 @@ public final class RobotMap
 		/// First joystick port
 		public static final int joystick1 = 1;
 		/// Second joystick port
-		public static final int joystick2 = 1;
+		public static final int joystick2 = 2;
 	}
 
 	/**
