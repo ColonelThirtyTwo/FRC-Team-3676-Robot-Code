@@ -26,7 +26,7 @@ public class HIDShooterCommand extends Command
 
 	protected void execute()
 	{
-		Joystick joy = Subsystems.joystick1system.joystick;
+		Joystick joy = Subsystems.joystick2system.joystick;
 		double power;
 		if(joy.getRawButton(1))
 			power = 0.25;
