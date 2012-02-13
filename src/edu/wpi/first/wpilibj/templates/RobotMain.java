@@ -72,4 +72,9 @@ public class RobotMain extends IterativeRobot
 	{
         Scheduler.getInstance().run();
     }
+	
+	public void disabledPeriodic()
+	{
+		Scheduler.getInstance().run();
+	}
 }
