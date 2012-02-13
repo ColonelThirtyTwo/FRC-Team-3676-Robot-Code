@@ -2,14 +2,14 @@
 package net.aisd.martin.frc.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
 /**
  *
  * @author Colonel Thirty Two
  */
-public class HIDShooterCommand extends CommandBase
+public class HIDShooterCommand extends Command
 {
 	public HIDShooterCommand()
 	{

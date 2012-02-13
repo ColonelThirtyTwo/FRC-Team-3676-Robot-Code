@@ -1,14 +1,14 @@
 
 package net.aisd.martin.frc.commands;
 
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
 /**
  * Manipulates the bridge.
  * @author Colonel Thirty Two
  */
-public class HIDBridgeManipulatorCommand extends CommandBase
+public class HIDBridgeManipulatorCommand extends Command
 {
 
 	public HIDBridgeManipulatorCommand()

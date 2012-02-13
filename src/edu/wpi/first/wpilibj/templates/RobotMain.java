@@ -10,9 +10,8 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.PrintCommand;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
 import net.aisd.martin.frc.Subsystems;
 
 /**
@@ -25,7 +24,7 @@ import net.aisd.martin.frc.Subsystems;
 public class RobotMain extends IterativeRobot
 {
 
-    Command autonomousCommand;
+    private Command autonomousCommand;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -33,11 +32,11 @@ public class RobotMain extends IterativeRobot
      */
     public void robotInit()
 	{
+		Subsystems.init();
+		
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
-
-        // Initialize all subsystems
-        CommandBase.init();
+        autonomousCommand = new PrintCommand("<Autonomous command placeholder>");
+		
 		// Init compressor
 		Subsystems.compressorsystem.compressor.start();
     }

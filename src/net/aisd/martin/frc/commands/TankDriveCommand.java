@@ -1,7 +1,7 @@
 
 package net.aisd.martin.frc.commands;
 
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
 /**
@@ -9,7 +9,7 @@ import net.aisd.martin.frc.Subsystems;
  * Is interruptible.
  * @author Col32
  */
-public class TankDriveCommand extends CommandBase
+public class TankDriveCommand extends Command
 {
 	public TankDriveCommand()
 	{

@@ -2,7 +2,7 @@
 package net.aisd.martin.frc.commands;
 
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
 /**
@@ -10,7 +10,7 @@ import net.aisd.martin.frc.Subsystems;
  * The name is "PressureStatus". True = low pressure, false = high pressure
  * @author Colonel Thirty Two
  */
-public class CompressorSendStatusCommand extends CommandBase
+public class CompressorSendStatusCommand extends Command
 {
 	private static final int dashboardDigitalOut = 1;
 	//private static final String Key = "PressureStatus";

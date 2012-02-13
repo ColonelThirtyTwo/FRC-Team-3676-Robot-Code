@@ -2,7 +2,7 @@
 package net.aisd.martin.frc.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
+import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
 /**
@@ -10,7 +10,7 @@ import net.aisd.martin.frc.Subsystems;
  * Is interruptible.
  * @author Col32
  */
-public class ArcadeDriveCommand extends CommandBase
+public class ArcadeDriveCommand extends Command
 {
 	public ArcadeDriveCommand()
 	{
