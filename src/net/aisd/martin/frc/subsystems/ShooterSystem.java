@@ -82,7 +82,7 @@ public class ShooterSystem extends Subsystem
 		else
 			piston.set(DoubleSolenoid.Value.kReverse);
 		
-		topmotor.set(spinPower*0.8);
+		topmotor.set(spinPower*0.6);
 		bottommotor.set(spinPower);
 	}
 	
