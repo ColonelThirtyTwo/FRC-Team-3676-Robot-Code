@@ -2,7 +2,6 @@
 package net.aisd.martin.frc;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.templates.RobotMap;
 import net.aisd.martin.frc.subsystems.*;
 
 /**

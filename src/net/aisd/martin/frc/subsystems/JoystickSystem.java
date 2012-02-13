@@ -3,7 +3,7 @@ package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.RobotMap;
+import net.aisd.martin.frc.RobotMap;
 
 /**
  * TODO: REMOVE THIS. Joysticks do not make good subsystems. Multiple commands

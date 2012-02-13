@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.RobotMap;
+import net.aisd.martin.frc.RobotMap;
 import net.aisd.martin.frc.commands.ArcadeDriveCommand;
 import net.aisd.martin.frc.commands.TankDriveCommand;
 

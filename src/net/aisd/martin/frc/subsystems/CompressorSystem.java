@@ -1,7 +1,7 @@
 package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.RobotMap;
+import net.aisd.martin.frc.RobotMap;
 import net.aisd.martin.frc.AISDCompressor;
 import net.aisd.martin.frc.commands.CompressorSendStatusCommand;
 
