@@ -16,7 +16,6 @@ public class HIDShooterCommand extends Command
 		super(HIDShooterCommand.class.getName());
 		setInterruptible(true);
 		requires(Subsystems.shootersystem);
-		requires(Subsystems.compressorsystem);
 	}
 	
 	protected void initialize()
