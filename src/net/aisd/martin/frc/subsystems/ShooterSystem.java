@@ -16,7 +16,10 @@ public class ShooterSystem extends Subsystem
 {
 	/// Time delay, in milliseconds, between calling shoot() and
 	// setting the piston to retract
-	private static final long RetractTimer = 1*1000;
+	public static final long ExtendTime = 1*1000;
+	/// Time delay, in milliseconds, between the piston beginning to retract
+	// and the ability to shoot again.
+	public static final long RetractTime = 1*1000;
 	
 	private double spinPower = 0;
 	private long retractTimer = Long.MIN_VALUE;
@@ -66,8 +69,8 @@ public class ShooterSystem extends Subsystem
 	{
 		if(spinPower == 0) return false;
 		long time = System.currentTimeMillis();
-		if(time < retractTimer) return false;
-		retractTimer = time+RetractTimer;
+		if(time < retractTimer+RetractTime) return false;
+		retractTimer = time+ExtendTime;
 		System.out.println("Shooting");
 		return true;
 	}
