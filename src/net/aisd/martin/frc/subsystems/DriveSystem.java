@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import net.aisd.martin.frc.RobotMap;
-import net.aisd.martin.frc.commands.ArcadeDriveCommand;
+import net.aisd.martin.frc.commands.ArcadePrecisionDriveCommand;
 import net.aisd.martin.frc.commands.TankDriveCommand;
 
 /**
@@ -61,7 +61,7 @@ public final class DriveSystem extends Subsystem
 	
 	protected void initDefaultCommand()
 	{
-		setDefaultCommand(new ArcadeDriveCommand());
+		setDefaultCommand(new ArcadePrecisionDriveCommand());
 	}
 	
 }

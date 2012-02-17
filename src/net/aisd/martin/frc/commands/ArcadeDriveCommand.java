@@ -17,7 +17,6 @@ public class ArcadeDriveCommand extends Command
 		super(ArcadeDriveCommand.class.getName()); // Corrects name when refactoring
 		setInterruptible(true);
 		requires(Subsystems.drivesystem);
-		requires(Subsystems.joystick1system);
 	}
 	
 	protected void initialize()
@@ -33,7 +32,7 @@ public class ArcadeDriveCommand extends Command
 
 	protected boolean isFinished()
 	{
-		return isTimedOut();
+		return false;
 	}
 
 	protected void end()
