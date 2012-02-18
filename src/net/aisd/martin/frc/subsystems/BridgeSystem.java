@@ -1,7 +1,7 @@
 package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import net.aisd.martin.frc.RobotMap;
@@ -28,7 +28,7 @@ public class BridgeSystem extends Subsystem {
     //creates new BridgeSystem
     public BridgeSystem(){
         this(
-			new Jaguar(RobotMap.Manipulator.motorSlot, RobotMap.Manipulator.motorChannel),
+			new Victor(RobotMap.Manipulator.motorSlot, RobotMap.Manipulator.motorChannel),
 			new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitChannel)
 		);
     }

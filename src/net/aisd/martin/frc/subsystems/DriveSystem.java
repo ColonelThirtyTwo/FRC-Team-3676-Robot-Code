@@ -20,9 +20,9 @@ public final class DriveSystem extends Subsystem
 	 * Workaround to set up a drivesystem while still calling this constructor,
 	 * since we cannot call methods in constructor until its too late.
 	 */
-	private static RobotDrive setupDriveSystem(SpeedController sp1, SpeedController sp2)
+	private static RobotDrive setupDriveSystem(SpeedController sp1, SpeedController sp2, SpeedController sp3, SpeedController sp4)
 	{
-		RobotDrive d = new RobotDrive(sp1, sp2);
+		RobotDrive d = new RobotDrive(sp1, sp2, sp3, sp4);
 		d.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
 		d.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		d.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
@@ -55,7 +55,9 @@ public final class DriveSystem extends Subsystem
 	{
 		this(setupDriveSystem(
 				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left),
-				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right)
+                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.leftBack),
+				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right),
+                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rightBack)
 		));
 	}
 	

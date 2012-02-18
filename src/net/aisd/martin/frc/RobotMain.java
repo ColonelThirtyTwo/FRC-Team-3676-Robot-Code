@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import net.aisd.martin.frc.commands.AutoShootCommand;
 import net.aisd.martin.frc.commands.movement.ForwardCommand;
 import net.aisd.martin.frc.commands.movement.HalfRotateCommand;
+import edu.wpi.first.wpilibj.camera.AxisCamera;
 
 /**
  * Main robot class. Does stuff.
@@ -24,6 +25,12 @@ public class RobotMain extends IterativeRobot
 	public void robotInit()
 	{
 		Subsystems.init();
+                // Changes camera setting to reduce lag to the computer
+                AxisCamera camera = AxisCamera.getInstance("10.36.76.11");
+                camera.writeMaxFPS(18);
+                camera.writeResolution(AxisCamera.ResolutionT.k160x120);
+                
+                
 
 		// instantiate the command used for the autonomous period
 		autonomousCommand = new AutoShootCommand();

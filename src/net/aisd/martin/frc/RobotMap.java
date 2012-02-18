@@ -41,6 +41,10 @@ public final class RobotMap
 		public static final int left = 1;
 		/// right motor channel
 		public static final int right = 2;
+                // left back motor channel
+                public static final int leftBack = 7;
+                // right back motor channel
+                public static final int rightBack = 8;
         }
         
 	/**

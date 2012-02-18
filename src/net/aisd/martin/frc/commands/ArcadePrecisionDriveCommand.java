@@ -28,14 +28,17 @@ public class ArcadePrecisionDriveCommand extends Command
 		Joystick stickFine = Subsystems.joystick2system.joystick;
       
                 //If the control is set to fine then use fine controls
-		if(stickFine.getRawButton(5)){
+		if(stickCoarse.getRawButton(5)){
                     //left-y=2 , right-y=5 , left-x=1 , right-x=4 
                     // 3 is the triggers?
                         Subsystems.drivesystem.driver.setMaxOutput(.5);
 			Subsystems.drivesystem.driver.arcadeDrive(stickFine, 5, stickFine, 4);
-                }else {
+                }else if (stickCoarse.getRawButton(6)){
+                        Subsystems.drivesystem.driver.setMaxOutput(.5);
+			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 2, stickCoarse, 1);
+                } else {
                         Subsystems.drivesystem.driver.setMaxOutput(1);
-			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 5, stickCoarse, 4);
+                        Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 4, stickCoarse, 5);
                 }
                 
 	}
