@@ -57,8 +57,10 @@ public final class RobotMap
 		
 		/// Limit Switch Slot
 		public static final int limitSlot = 1;
-		/// Limit Switch Channel (Digital IO)
-		public static final int limitChannel = 2;
+		/// Limit Switch Channel for up(Digital IO)
+		public static final int limitUpChannel = 2;
+                // Limit Switch Channel for down (Digital IO)
+                public static final int limitDownChannel = 3;
 	}
         
 	/**
