@@ -14,7 +14,7 @@ public class AutoShootCommand extends Command
 	private static final double SpinPower = 1.0;
 	
 	/// Amount of balls remaining.
-	private int ballsRemaining = 3;
+	private int ballsRemaining = 2;
 	
 	public AutoShootCommand()
 	{
