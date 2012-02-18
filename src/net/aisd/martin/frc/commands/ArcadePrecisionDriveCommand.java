@@ -33,13 +33,13 @@ public class ArcadePrecisionDriveCommand extends Command
                  * While loop prevents random toggling from holding the button down.
                  */
                 if (stickFine.getRawButton(5)){
-                    if (fineControl = false){
+                    if (fineControl == false){
                         while (stickFine.getRawButton(5)){
                             fineControl = true;
                         }
                     }
                     
-                    if (fineControl = true){
+                    if (fineControl == true){
                         while (stickFine.getRawButton(5)){
                             fineControl = false;
                         }
@@ -53,7 +53,7 @@ public class ArcadePrecisionDriveCommand extends Command
 			Subsystems.drivesystem.driver.arcadeDrive(stickFine, 5, stickFine, 4);
                 }else {
                         Subsystems.drivesystem.driver.setMaxOutput(1);
-			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 1, stickCoarse, 4);
+			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 5, stickCoarse, 4);
                 }
                 
 	}
