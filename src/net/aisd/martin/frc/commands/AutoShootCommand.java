@@ -1,7 +1,6 @@
 
 package net.aisd.martin.frc.commands;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
@@ -29,6 +28,15 @@ public class AutoShootCommand extends Command
 
 	protected void execute()
 	{
+           //Starts the motors spinning directly to allow them to
+            //spin up
+            Subsystems.shootersystem.topmotor.set(1);
+            Subsystems.shootersystem.bottommotor.set(1);
+               //Pauses for 2 seconds 
+             try {
+                Thread.sleep(2000);
+            } catch(Exception e) {}
+             //While there are balls loop through the shootersytem think
 		while(ballsRemaining > 0){
 			Subsystems.shootersystem.setSpinning(1);
 			boolean check = Subsystems.shootersystem.shoot();
