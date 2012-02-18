@@ -1,6 +1,7 @@
 
 package net.aisd.martin.frc.commands;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Command;
 import net.aisd.martin.frc.Subsystems;
 
@@ -28,10 +29,14 @@ public class AutoShootCommand extends Command
 
 	protected void execute()
 	{
-		Subsystems.shootersystem.setSpinning(SpinPower);
-		if(ballsRemaining == 0) return;
-		if(Subsystems.shootersystem.shoot())
-			ballsRemaining--;
+		while(ballsRemaining > 0){
+			Subsystems.shootersystem.setSpinning(1);
+			boolean check = Subsystems.shootersystem.shoot();
+			Subsystems.shootersystem.think();
+			if(check){
+				ballsRemaining--;
+			}
+		}
 	}
 
 	protected boolean isFinished()
@@ -41,12 +46,13 @@ public class AutoShootCommand extends Command
 
 	protected void end()
 	{
-		Subsystems.shootersystem.setSpinning(0);
-	}
+		Subsystems.shootersystem.topmotor.set(1);
+		Subsystems.shootersystem.bottommotor.set(1);	}
 
 	protected void interrupted()
 	{
-		Subsystems.shootersystem.setSpinning(0);
+		Subsystems.shootersystem.topmotor.set(1);
+		Subsystems.shootersystem.bottommotor.set(1);
 	}
 	
 }

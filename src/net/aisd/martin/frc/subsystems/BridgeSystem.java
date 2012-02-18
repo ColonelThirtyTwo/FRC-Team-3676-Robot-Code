@@ -48,9 +48,9 @@ public class BridgeSystem extends Subsystem {
                         manipulatorArm.set(power);//set to input power
                         
                 } else if(limitSwitchDown.get()){//Otherwise if down is on then only go up
-			manipulatorArm.set(Math.max(power,0));
+			manipulatorArm.set(Math.min(power,0));
                 } else if(limitSwitchUp.get()) {
-                        manipulatorArm.set(Math.min(power,0));//And if up is on then only go down
+                        manipulatorArm.set(Math.max(power,0));//And if up is on then only go down
                 }
     }
 	

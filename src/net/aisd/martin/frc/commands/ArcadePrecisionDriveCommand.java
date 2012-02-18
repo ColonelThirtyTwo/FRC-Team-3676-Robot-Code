@@ -26,27 +26,9 @@ public class ArcadePrecisionDriveCommand extends Command
 	{
 		Joystick stickCoarse = Subsystems.joystick1system.joystick;
 		Joystick stickFine = Subsystems.joystick2system.joystick;
-                boolean fineControl = false;
-                /*
-                 * Checks if the Sensitive control button is pushed and if so toggles the fine
-                 * control setting.
-                 * While loop prevents random toggling from holding the button down.
-                 */
-                if (stickFine.getRawButton(5)){
-                    if (fineControl == false){
-                        while (stickFine.getRawButton(5)){
-                            fineControl = true;
-                        }
-                    }
-                    
-                    if (fineControl == true){
-                        while (stickFine.getRawButton(5)){
-                            fineControl = false;
-                        }
-                    }
-                }
+      
                 //If the control is set to fine then use fine controls
-		if(fineControl){
+		if(stickFine.getRawButton(5)){
                     //left-y=2 , right-y=5 , left-x=1 , right-x=4 
                     // 3 is the triggers?
                         Subsystems.drivesystem.driver.setMaxOutput(.5);

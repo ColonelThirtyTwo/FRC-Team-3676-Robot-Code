@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import net.aisd.martin.frc.commands.AutoShootCommand;
 import net.aisd.martin.frc.commands.movement.ForwardCommand;
 import net.aisd.martin.frc.commands.movement.HalfRotateCommand;
 
@@ -25,10 +26,7 @@ public class RobotMain extends IterativeRobot
 		Subsystems.init();
 
 		// instantiate the command used for the autonomous period
-		CommandGroup auto = new CommandGroup("Autonomous");
-		auto.addSequential(new HalfRotateCommand(false));
-		auto.addSequential(new ForwardCommand(1,2));
-		autonomousCommand = auto;
+		autonomousCommand = new AutoShootCommand();
 
 		Subsystems.compressorsystem.compressor.start();
 	}
