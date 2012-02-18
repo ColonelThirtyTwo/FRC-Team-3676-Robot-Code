@@ -1,4 +1,3 @@
-
 package net.aisd.martin.frc.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -17,23 +16,21 @@ public class BridgeSystem extends Subsystem {
     private double power = 0;
     
     private SpeedController manipulatorArm;
-	private DigitalInput limitSwitchUp;
-        private DigitalInput limitSwitchDown;
+	private DigitalInput limitSwitch;
     
 
-    public BridgeSystem(SpeedController manipulatorArm, DigitalInput limitSwitchUp, DigitalInput limitSwitchDown)
+    public BridgeSystem(SpeedController manipulatorArm, DigitalInput limitSwitch)
 	{
 		super(BridgeSystem.class.getName());
 		this.manipulatorArm = manipulatorArm;
-		this.limitSwitchUp = limitSwitchUp;
-                this.limitSwitchDown = limitSwitchDown;
+		this.limitSwitch = limitSwitch;
     }    
     //creates new BridgeSystem
     public BridgeSystem(){
-			this.manipulatorArm = new Jaguar(RobotMap.Manipulator.motorSlot, RobotMap.Manipulator.motorChannel);
-			this.limitSwitchUp = new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitUpChannel);
-                        this.limitSwitchDown = new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitDownChannel);
-		
+        this(
+			new Jaguar(RobotMap.Manipulator.motorSlot, RobotMap.Manipulator.motorChannel),
+			new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitChannel)
+		);
     }
     
     public void setArmPower(double power){
@@ -42,21 +39,15 @@ public class BridgeSystem extends Subsystem {
     
     public void think()
 	{
-		if( (limitSwitchUp == null || !limitSwitchUp.get()) && //if up is off or null
-                    (limitSwitchDown == null || !limitSwitchDown.get())){//and down is off or null
-                            
-                        manipulatorArm.set(power);//set to input power
-                        
-                } else if(limitSwitchDown.get()){//Otherwise if down is on then only go up
-			manipulatorArm.set(Math.min(power,0));
-                } else if(limitSwitchUp.get()) {
-                        manipulatorArm.set(Math.max(power,0));//And if up is on then only go down
-                }
+		if(limitSwitch == null || !limitSwitch.get())
+			manipulatorArm.set(power);
+		else
+			manipulatorArm.set(Math.max(power,0));
     }
-	
+
 	public boolean getLimitSwitch()
 	{
-		return limitSwitchUp == null ? true : limitSwitchUp.get();
+		return limitSwitch == null ? true : limitSwitch.get();
 	}
     
     protected void initDefaultCommand()
