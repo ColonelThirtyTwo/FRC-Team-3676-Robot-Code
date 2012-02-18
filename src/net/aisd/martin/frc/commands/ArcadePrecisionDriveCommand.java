@@ -29,7 +29,7 @@ public class ArcadePrecisionDriveCommand extends Command
 		if(stickFine.getRawButton(5))
 			Subsystems.drivesystem.driver.arcadeDrive(stickFine, 4, stickFine, 3);
 		else
-			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 2, stickCoarse, 3);
+			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 2, stickCoarse, 1);
 	}
 
 	protected boolean isFinished()
