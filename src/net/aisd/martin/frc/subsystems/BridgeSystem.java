@@ -32,8 +32,7 @@ public class BridgeSystem extends Subsystem {
     public BridgeSystem(){
 			this.manipulatorArm = new Jaguar(RobotMap.Manipulator.motorSlot, RobotMap.Manipulator.motorChannel);
 			this.limitSwitchUp = new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitUpChannel);
-                        this.limitSwitchDown = null;
-                        //new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitDownChannel);
+                        this.limitSwitchDown = new DigitalInput(RobotMap.Manipulator.limitSlot, RobotMap.Manipulator.limitDownChannel);
 		
     }
     

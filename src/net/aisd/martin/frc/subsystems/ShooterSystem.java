@@ -24,8 +24,8 @@ public class ShooterSystem extends Subsystem
 	private double spinPower = 0;
 	private long retractTimer = Long.MIN_VALUE;
 
-	private DoubleSolenoid piston;
-	private SpeedController topmotor, bottommotor;
+	public DoubleSolenoid piston;
+	public SpeedController topmotor, bottommotor;
 
 	/**
 	 * Creates a new Shooter system with specified components.

@@ -26,6 +26,7 @@ public class ArcadePrecisionDriveCommand extends Command
 	{
 		Joystick stickCoarse = Subsystems.joystick1system.joystick;
 		Joystick stickFine = Subsystems.joystick2system.joystick;
+      
                 //If the control is set to fine then use fine controls
 		if(stickFine.getRawButton(5)){
                     //left-y=2 , right-y=5 , left-x=1 , right-x=4 
