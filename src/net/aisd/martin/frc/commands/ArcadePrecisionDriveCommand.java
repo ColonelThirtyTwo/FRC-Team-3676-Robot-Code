@@ -38,7 +38,7 @@ public class ArcadePrecisionDriveCommand extends Command
 			Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 2, stickCoarse, 1);
                 } else {
                         Subsystems.drivesystem.driver.setMaxOutput(1);
-                        Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 4, stickCoarse, 5);
+                        Subsystems.drivesystem.driver.arcadeDrive(stickCoarse, 5, stickCoarse, 4);
                 }
                 
 	}
