@@ -35,10 +35,14 @@ public class SpinupCommand extends Command
 
 	protected void end()
 	{
+		Subsystems.shootersystem.setSpinning(0);
+		Subsystems.shootersystem.think();
 	}
 
 	protected void interrupted()
 	{
+		Subsystems.shootersystem.setSpinning(0);
+		Subsystems.shootersystem.think();
 	}
 	
 }

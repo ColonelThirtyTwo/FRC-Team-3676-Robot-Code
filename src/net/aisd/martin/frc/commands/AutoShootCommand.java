@@ -29,15 +29,15 @@ public class AutoShootCommand extends Command
 	protected void execute()
 	{
 		Subsystems.shootersystem.setSpinning(SpinPower);
+		Subsystems.shootersystem.think();
 		if(ballsRemaining == 0) return;
 		if(Subsystems.shootersystem.shoot())
 			ballsRemaining--;
-		Subsystems.shootersystem.think();
 	}
 
 	protected boolean isFinished()
 	{
-		return ballsRemaining == 0;
+		return ballsRemaining == 0 && Subsystems.shootersystem.canShoot();
 	}
 
 	protected void end()
