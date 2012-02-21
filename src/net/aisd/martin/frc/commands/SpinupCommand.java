@@ -25,6 +25,7 @@ public class SpinupCommand extends Command
 	protected void execute()
 	{
 		Subsystems.shootersystem.setSpinning(1);
+		Subsystems.shootersystem.think();
 	}
 
 	protected boolean isFinished()

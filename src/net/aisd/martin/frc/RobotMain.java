@@ -29,19 +29,16 @@ public class RobotMain extends IterativeRobot
 		AxisCamera camera = AxisCamera.getInstance();
 		camera.writeMaxFPS(18);
 		camera.writeResolution(AxisCamera.ResolutionT.k160x120);
-
-		// instantiate the command used for the autonomous period
-		CommandGroup group = new CommandGroup("Autonomous");
-		group.addSequential(new SpinupCommand(3));
-		group.addSequential(new AutoShootCommand());
-		autonomousCommand = group;
-
 		Subsystems.compressorsystem.compressor.start();
 	}
 
 	public void autonomousInit()
 	{
-            System.out.print("Autonomous Starting");
+		System.out.print("Autonomous Starting");
+		CommandGroup group = new CommandGroup("Autonomous");
+		group.addSequential(new SpinupCommand(3));
+		group.addSequential(new AutoShootCommand());
+		autonomousCommand = group;
 		autonomousCommand.start();
 	}
 
