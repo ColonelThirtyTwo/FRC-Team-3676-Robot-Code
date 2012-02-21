@@ -24,8 +24,8 @@ public class ShooterSystem extends Subsystem
 	private double spinPower = 0;
 	private long retractTimer = Long.MIN_VALUE;
 
-	public DoubleSolenoid piston;
-	public SpeedController topmotor, bottommotor;
+	private DoubleSolenoid piston;
+	private SpeedController topmotor, bottommotor;
 
 	/**
 	 * Creates a new Shooter system with specified components.
@@ -69,10 +69,21 @@ public class ShooterSystem extends Subsystem
 	{
 		if(spinPower == 0) return false;
 		long time = System.currentTimeMillis();
-		if(time < retractTimer+RetractTime) return false;
-		retractTimer = time+ExtendTime;
-		System.out.println("Shooting");
-		return true;
+		if(canShoot())
+		{
+			retractTimer = time+ExtendTime;
+			return true;
+		}
+		else return false;
+	}
+	
+	/**
+	 * Can we shoot?
+	 * @return 
+	 */
+	public boolean canShoot()
+	{
+		return System.currentTimeMillis() >= retractTimer+RetractTime;
 	}
 	
 	/**

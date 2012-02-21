@@ -54,10 +54,10 @@ public final class DriveSystem extends Subsystem
 	public DriveSystem()
 	{
 		this(setupDriveSystem(
-				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.left),
-                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.leftBack),
-				new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.right),
-                                new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rightBack)
+		     new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.frontLeft),
+		     new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.leftBack),
+		     new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.frontRight),
+		     new Jaguar(RobotMap.DriveMotors.slot, RobotMap.DriveMotors.rightBack)
 		));
 	}
 	
@@ -65,5 +65,4 @@ public final class DriveSystem extends Subsystem
 	{
 		setDefaultCommand(new ArcadePrecisionDriveCommand());
 	}
-	
 }

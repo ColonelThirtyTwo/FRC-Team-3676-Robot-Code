@@ -38,13 +38,13 @@ public final class RobotMap
 		/// Slot that motors are on
 		public static final int slot = 1;
 		/// left motor channel
-		public static final int left = 1;
+		public static final int frontLeft = 1;
 		/// right motor channel
-		public static final int right = 2;
-                // left back motor channel
-                public static final int leftBack = 8;
-                // right back motor channel
-                public static final int rightBack = 7;
+		public static final int frontRight = 2;
+		// left back motor channel
+		public static final int leftBack = 8;
+		// right back motor channel
+		public static final int rightBack = 7;
         }
         
 	/**
@@ -61,7 +61,7 @@ public final class RobotMap
 		
 		/// Limit Switch Slot
 		public static final int limitSlot = 1;
-		/// Limit Switch Channel for up(Digital IO)
+		/// Limit Switch Channel for up (Digital IO)
 		public static final int limitChannel = 2;
 	}
         

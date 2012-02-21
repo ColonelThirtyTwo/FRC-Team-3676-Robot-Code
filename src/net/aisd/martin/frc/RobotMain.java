@@ -5,8 +5,10 @@ package net.aisd.martin.frc;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import net.aisd.martin.frc.commands.AutoShootCommand;
 import edu.wpi.first.wpilibj.camera.AxisCamera;
+import edu.wpi.first.wpilibj.command.CommandGroup;
+import net.aisd.martin.frc.commands.AutoShootCommand;
+import net.aisd.martin.frc.commands.SpinupCommand;
 
 /**
  * Main robot class. Does stuff.
@@ -21,17 +23,18 @@ public class RobotMain extends IterativeRobot
 		*/
 	public void robotInit()
 	{
+		System.out.println("Initializing robot");
 		Subsystems.init();
-                // Changes camera setting to reduce lag to the computer
-                AxisCamera camera = AxisCamera.getInstance();
-                camera.writeMaxFPS(18);
-                camera.writeResolution(AxisCamera.ResolutionT.k160x120);
-                System.out.print("AxisCamera is configured");
-                
-                
+		// Changes camera setting to reduce lag to the computer
+		AxisCamera camera = AxisCamera.getInstance();
+		camera.writeMaxFPS(18);
+		camera.writeResolution(AxisCamera.ResolutionT.k160x120);
 
 		// instantiate the command used for the autonomous period
-		autonomousCommand = new AutoShootCommand();
+		CommandGroup group = new CommandGroup("Autonomous");
+		group.addSequential(new SpinupCommand(1));
+		group.addSequential(new AutoShootCommand());
+		autonomousCommand = group;
 
 		Subsystems.compressorsystem.compressor.start();
 	}

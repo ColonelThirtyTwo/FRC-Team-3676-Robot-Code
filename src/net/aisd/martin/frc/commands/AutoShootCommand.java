@@ -28,26 +28,11 @@ public class AutoShootCommand extends Command
 
 	protected void execute()
 	{
-           //Starts the motors spinning directly to allow them to
-            //spin up
-            try {
-                Thread.sleep(6000);
-            } catch(Exception e) {}
-			Subsystems.shootersystem.topmotor.set(1);
-            Subsystems.shootersystem.bottommotor.set(1);
-               //Pauses for 2 seconds 
-             try {
-                Thread.sleep(2000);
-            } catch(Exception e) {}
-             //While there are balls loop through the shootersytem think
-		while(ballsRemaining > 0){
-			Subsystems.shootersystem.setSpinning(1);
-			boolean check = Subsystems.shootersystem.shoot();
-			Subsystems.shootersystem.think();
-			if(check){
-				ballsRemaining--;
-			}
-		}
+		Subsystems.shootersystem.setSpinning(SpinPower);
+		if(ballsRemaining == 0) return;
+		if(Subsystems.shootersystem.shoot())
+			ballsRemaining--;
+		Subsystems.shootersystem.think();
 	}
 
 	protected boolean isFinished()
@@ -57,13 +42,12 @@ public class AutoShootCommand extends Command
 
 	protected void end()
 	{
-		Subsystems.shootersystem.topmotor.set(1);
-		Subsystems.shootersystem.bottommotor.set(1);	}
+		Subsystems.shootersystem.setSpinning(0);
+	}
 
 	protected void interrupted()
 	{
-		Subsystems.shootersystem.topmotor.set(1);
-		Subsystems.shootersystem.bottommotor.set(1);
+		Subsystems.shootersystem.setSpinning(0);
 	}
 	
 }
