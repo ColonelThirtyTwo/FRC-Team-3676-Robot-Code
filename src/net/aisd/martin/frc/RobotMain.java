@@ -32,7 +32,7 @@ public class RobotMain extends IterativeRobot
 
 		// instantiate the command used for the autonomous period
 		CommandGroup group = new CommandGroup("Autonomous");
-		group.addSequential(new SpinupCommand(1));
+		group.addSequential(new SpinupCommand(3));
 		group.addSequential(new AutoShootCommand());
 		autonomousCommand = group;
 
