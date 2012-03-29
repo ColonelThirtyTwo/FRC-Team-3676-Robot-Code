@@ -2,6 +2,7 @@
 package net.aisd.martin.frc;
 
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -16,6 +17,7 @@ import net.aisd.martin.frc.commands.SpinupCommand;
 public class RobotMain extends IterativeRobot
 {
 	private Command autonomousCommand;
+	private DriverStation driverstation = DriverStation.getInstance();
 
 	/**
 		* This function is run when the robot is first started up and should be
@@ -36,7 +38,7 @@ public class RobotMain extends IterativeRobot
 	{
 		System.out.print("Autonomous Starting");
 		CommandGroup group = new CommandGroup("Autonomous");
-		group.addSequential(new SpinupCommand(3));
+		group.addSequential(new SpinupCommand(driverstation.getAnalogIn(1)));
 		group.addSequential(new AutoShootCommand());
 		autonomousCommand = group;
 		autonomousCommand.start();
